@@ -3,9 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>页面标题</title>
+    <style>
+        body {
+            text-align: center;
+            padding-top: 50px; /* 添加一些顶部内边距 */
+        }
+        .time {
+            font-size: 24px; /* 设置时间的字体大小 */
+            margin-top: 20px; /* 添加时间和按钮之间的间距 */
+        }
+    </style>
 </head>
 <body>
-    <h1>test</h1>
-    <p>这里是页面的内容。</p>
+    <h1 style="font-size: 36px;">test</h1>
+    <button style="font-size: 20px;">test</button>
+    <p class="time" id="time"></p>
+    <script>
+        function updateTime() {
+            var now = new Date();
+            var hours = now.getHours().toString().padStart(2, '0');
+            var minutes = now.getMinutes().toString().padStart(2, '0');
+            var seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('time').textContent = hours + ':' + minutes + ':' + seconds;
+        }
+        setInterval(updateTime, 1000); // 每秒更新时间
+        updateTime(); // 初始化时间
+    </script>
 </body>
 </html>
