@@ -2,118 +2,172 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>页面标题</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>怀念旺旺</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
+            background-color: #111; /* 更亮的背景色 */
+            color: #eee; /* 更亮的文字颜色 */
             text-align: center;
-            padding-top: 50px; /* 添加一些顶部内边距 */
+            padding: 50px;
+            margin: 0;
         }
-        .title {
-            font-size: 48px; /* 放大标题字体 */
+        .container {
+            background-color: #444; /* 更亮的容器背景色 */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* 更亮的阴影效果 */
+            display: inline-block;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #fff; /* 更亮的标题颜色 */
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #ddd; /* 更亮的段落文字颜色 */
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 2px solid #fff;
+            margin: 10px 0;
+            filter: grayscale(100%); /* 默认为黑白 */
+        }
+        .color-img {
+            filter: none; /* 颜色图像 */
+        }
+        .pet-category {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .pet-category h2 {
+            color: #fff; /* 类别标题颜色 */
+        }
+        .pet-images {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .pet-images div {
+            margin: 10px;
+            text-align: center;
+        }
+        .pet-images img {
+            border: 2px solid #fff;
+            max-width: 150px;
+            height: auto;
         }
         .button {
-            font-size: 24px; /* 设置按钮字体大小 */
-            padding: 10px 20px; /* 增加按钮内边距，使按钮看起来更大 */
-            margin-top: 20px; /* 添加按钮和标题之间的间距 */
-        }
-        .time {
-            font-size: 24px; /* 设置时间的字体大小 */
-            margin-top: 20px; /* 添加时间和按钮之间的间距 */
-        }
-        /* 弹窗样式 */
-        .modal {
-            display: none; /* 默认不显示弹窗 */
-            position: fixed; /* 固定定位 */
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
-            justify-content: center;
-            align-items: center;
-            z-index: 1000; /* 确保弹窗在最上层 */
-        }
-        .modal-content {
-            background-color: #fff;
-            padding: 20px;
+            display: block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            font-size: 16px;
+            color: #eee; /* 与文字颜色一致 */
+            background-color: #666; /* 与背景色协调的灰色 */
+            border: 2px solid #ddd; /* 边框颜色与背景协调 */
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            position: relative; /* 相对定位，以便关闭按钮可以正确定位 */
-        }
-        .modal-header {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        .modal-header a {
-            color: blue;
-            text-decoration: underline;
             cursor: pointer;
-        }
-        .modal-close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 24px;
-            font-weight: bold;
-            color: #000;
-            text-shadow: 0 1px 0 #fff;
-            opacity: 0.5;
-        }
-        .modal-close:hover,
-        .modal-close:focus {
-            color: black;
             text-decoration: none;
-            cursor: pointer;
-            opacity: 0.9;
+            font-weight: bold;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .button:hover {
+            background-color: #777; /* 鼠标悬停时的颜色 */
+        }
+        .count {
+            display: none; /* 隐藏计数 */
+        }
+        .footer {
+            margin-top: 30px;
+            color: #ddd; /* 更亮的底部文字颜色 */
+        }
+        .footer .small {
+            font-size: 12px; /* 较小的字体 */
+        }
+        .footer .large {
+            font-size: 24px; /* 较大的字体 */
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <h1 class="title">一个测试网站</h1>
-    <button class="button" id="myButton">点击我，获取链接！</button>
-    <p class="time" id="time"></p>
+    <div class="container">
+        <h1>永远怀念</h1>
+        <img src="img/1.jpg" alt="旺旺的照片">
+        <button class="button" onclick="handleButtonClick()">为他悼念</button>
+        <p>亲爱的旺旺，你是我们生命中最珍贵的朋友。你的温暖和陪伴让每一天都充满了快乐。虽然你已经离开了我们，但你永远活在我们的心中。感谢你带来的所有美好回忆，你的爱与忠诚将永远被铭记。愿你在天堂中安息，永远幸福。至此。</p>
+        <p>也为其他为我们家做出贡献的犬，猫表达怀念，他们的名字是：</p>
 
-    <!-- 弹窗内容 -->
-    <div class="modal" id="myModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <a href="https://www.bilibili.com/video/BV1GJ411x7h7/" target="_blank">情趣网站</a>
+        <!-- 狗的部分 -->
+        <div class="pet-category">
+            <h2>狗</h2>
+            <div class="pet-images">
+                <div>
+                    <p>野狗<br>2023-now</p>
+                    <img class="color-img" src="img/4.jpg" alt="野狗">
+                </div>
+                <div>
+                    <p>小旺<br>2016?-2021</p>
+                    <img src="img/2.jpg" alt="小旺">
+                    <button class="button" onclick="handlePetClick('小旺')">为他悼念</button>
+                </div>
+                <div>
+                    <p>旺财<br>2020-2023</p>
+                    <button class="button" onclick="handlePetClick('旺财')">为他悼念</button>
+                </div>
+                <div>
+                    <p>财财<br>2020-2023</p>
+                    <button class="button" onclick="handlePetClick('财财')">为他悼念</button>
+                </div>
             </div>
-            <div class="modal-close">&times;</div>
+        </div>
+
+        <!-- 猫的部分 -->
+        <div class="pet-category">
+            <h2>猫</h2>
+            <div class="pet-images">
+                <div>
+                    <p>黑咪<br>?-2022</p>
+                    <img src="img/3.jpg" alt="黑咪"> <!-- 黑咪的照片保持黑白 -->
+                    <button class="button" onclick="handlePetClick('黑咪')">为他悼念</button>
+                </div>
+                <div>
+                    <p>花咪<br>2022-now</p>
+                    <!-- 花咪没有照片，也没有哀悼按钮 -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- 底部备注 -->
+        <div class="footer">
+            <p class="small">补充说明：因暂无旺财，财财相片，所以暂时空缺。花咪的懒得拍</p>
+            <p class="large">2024.8.28</p>
         </div>
     </div>
-
     <script>
-        function updateTime() {
-            var now = new Date();
-            var hours = now.getHours().toString().padStart(2, '0');
-            var minutes = now.getMinutes().toString().padStart(2, '0');
-            var seconds = now.getSeconds().toString().padStart(2, '0');
-            document.getElementById('time').textContent = hours + ':' + minutes + ':' + seconds;
-        }
-        setInterval(updateTime, 1000); // 每秒更新时间
-        updateTime(); // 初始化时间
+        // 处理按钮点击状态
+        let hasClicked = false;
 
-        // 获取按钮和弹窗元素
-        var button = document.getElementById('myButton');
-        var modal = document.getElementById('myModal');
-        var closeButton = document.querySelector('.modal-close');
-
-        // 添加点击事件监听器
-        button.onclick = function() {
-            modal.style.display = 'flex'; // 显示弹窗
-        }
-
-        // 关闭弹窗的点击事件
-        closeButton.onclick = function() {
-            modal.style.display = 'none'; // 隐藏弹窗
-        }
-
-        // 点击弹窗外部关闭弹窗
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = 'none'; // 隐藏弹窗
+        // 处理"为他悼念"按钮点击事件
+        function handleButtonClick() {
+            if (!hasClicked) {
+                alert("感谢您对他的悼念。");
+                hasClicked = true;
+            } else {
+                alert("十分感谢!");
             }
+        }
+
+        // 处理宠物按钮点击事件
+        function handlePetClick(petName) {
+            alert("感谢您为" + petName + "悼念。");
         }
     </script>
 </body>
